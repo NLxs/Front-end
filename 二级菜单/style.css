@@ -1,0 +1,59 @@
+/* 初始化 */
+*{
+  margin:0;
+  padding:0
+}
+.container{
+  width:500px;
+  margin:0 auto;
+  text-align:center;
+}
+.menu{
+  width:200px;
+  display:inline-block;
+}
+li{
+  list-style:none;
+  cursor:pointer;
+  text-align:left;
+  text-indent:5px;
+}
+.main-menu{
+  background:#0099CC;
+  margin:1px 0;
+}
+.sub-menu{
+  background:#00CCFF;
+  margin:1px 0;
+  overflow:hidden;
+  height:0;
+}
+.sub-menu.checked{
+  height:20px;
+}
+/* 第二步 */
+.ck:checked + .sub-menu-container .sub-menu{
+  height:20px;
+}
+
+/* 第三步 */
+/* 将label设置成和一级菜单同样大小 */
+.menu-label{
+  display:inline-block;
+  width:100%;
+  cursor:pointer;
+}
+/* 隐藏checkbox */
+.ck-finished{
+  display:none;
+}
+.ck-finished:checked + .sub-menu-container .sub-menu-finished{
+  height:20px;
+}
+.sub-menu-finished{
+  background:#00CCFF;
+  margin:1px 0;
+  overflow:hidden;
+  height:0;
+  transition:all 0.4s;/* 添加动画 */
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    a::after {
+      content: attr(href)
+    }
+  </style>
+</head>
+<body>
+    <a>nohref</a>
+    <a href>href</a>
+    <a href="">href=""</a>
+    <a href="javascript:"></a>
+    <a href="test1.html"></a>
+    <a href="https://www.baidu.com"></a>
+    <a href="#aaa" rel="hehe"></a>
+    <a href="https://www.baidu.com#bbb"></a>
+    <map name="map">
+      <area shape="circle" coords="100,100,100" href="https://www.baidu.com/" />
+    </map>
+    <img usemap="#map" src="data:image/svg+xml,%3Csvg  version='1.1' xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='100' fill='lightblue'/%3E%3C/svg%3E" />
+
+  <script>
+    // 完整实现
+    //所有的a标签
+    const anchors = document.querySelectorAll('a');
+    console.log(anchors);
+    //所有的链接元素
+    const links = document.links;
+    console.log(document.links);
+    //3
+    Array.from(links).forEach(link => {
+      if (/^javascript:/.test(link.href)) {
+        link.setAttribute('role', 'button');
+      } else if (link.host !== location.host) {
+        link.target = "_blank";
+        //题目中说的是包含,所以原有的不能覆盖掉,只能是添加
+        link.relList.add('external', 'nofollow', 'noopener');
+        //题目中说的是href以#开头的,所以 当前host# 这种格式的也不符合要求
+      } else if (/^#/.test(link.getAttribute('href'))) {
+        //题目中说的是设置为,所以直接覆盖原有的值
+        link.rel = 'internal';
+      }
+    });
+
+
+    /* 
+      链接元素和a元素区别
+      没有href的<a>不是链接元素
+      <area> 带href 也是链接元素 
+    */
+    /* 获取页面所有a元素 */
+    // 所有浏览器都支持
+    // document.getElementsByTagName('a')
+    // IE8+
+    // document.querySelectorAll('a')
+    /* 获取页面所有链接元素 */
+    // document.links
+    // document.querySelectorAll(':link')
+
+    //for(var i = 0; i < linkList.length; i++) {
+    //  var item = linkList[i]
+      /* 
+        当前链接元素中href属性值以'javascript'开头的元素
+        则设置role属性值为'button'
+      */
+      //if(item.href.startsWith('javascript:')) {
+      //  item.setAttribute('role', 'button')
+      //}
+      /*
+        当前链接元素中href属性值对应的URL地址和当前网页地址栏中
+        host地址不一样, 设置当前链接元素的target的属性值为'_blank'
+        同时设置rel的属性值包含'external' 'nofollow' 'noopener'
+      */
+      // 链接地址和当前地址栏host匹配, eleLink.host == localhost.host
+      // 链接元素自带host hostname hash 等属性 和localtion对象一样
+      // 不要使用hostname 端口不一定匹配 
+      // 例如 <a href="//www.xxxx.com:80">和URL www.xxxx.com:90会认为是一个域下，实际上不是的。
+      /*let host = window.location.host
+      NodeList_Hrdef.forEach((item) => {
+        if(item.host != host && item.tagName == 'a') {
+          item.setAttribute('target', '_blank')
+          item.setAttribute("rel", "external nofollow noopener")
+        }
+      })*/
+    //}
+
+    /*
+      rel属性值包含 不覆盖原来设置的rel属性值
+      需要用到relList
+      rel 多个属性值赋值要用到add方法
+    */
+    /*if(link.host !== localtion.host) {
+      link.target = "_blank"
+      link.relList.add('external', 'nofollow', 'noopener')
+    }*/
+    /*
+      当前链接元素href属性值以#开头, 则设置该元素rel
+      属性值为'internal'
+    */
+    // 这里不能使用item.href而是使用getAttribute
+    // 因为直接.href,以"#"开头的href会带上当前页面路径在加上#
+    if(href.startsWith('#')){
+      item.setAttribute('rel', 'internal');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <h3>第一步：初始化</h3>
+    <br>
+    <p>默认二级菜单的li高度为0</p>
+    <br>
+    <p>选择一级菜单时，将二级菜单高度设置为20px</p>
+    <br>
+    <p>这样设置是为了方便我们以后添加动画效果</p>
+    <ul class="menu">
+      <li class="main-menu">
+        <label for="ck1">
+            <span>水果</span>    
+        </label>
+        <input id="ck1" type="checkbox">
+        <ul class="sub-menu-container">
+          <li class="sub-menu">橘子</li>
+          <li class="sub-menu">香蕉</li>
+          <li class="sub-menu">苹果</li>
+        </ul>
+      </li>
+      <li class="main-menu">
+        <label for="ck2">
+            <span>水果</span>    
+        </label>
+        <input id="ck2" type="checkbox" checked>
+        <ul class="sub-menu-container">
+          <li class="sub-menu checked">橘子</li>
+          <li class="sub-menu checked">香蕉</li>
+          <li class="sub-menu checked">苹果</li>
+        </ul>
+      </li>
+    </ul>
+    <h3>第二步：选中checkbox时展开二级菜单</h3>
+    <h2>划重点--注意label和input之间的位置</h2>
+    <ul class="menu">
+      <li class="main-menu">
+        <label for="ck3">
+            <span>水果</span>    
+        </label>
+        <input id="ck3" class="ck" type="checkbox">
+        <ul class="sub-menu-container">
+          <li class="sub-menu">橘子</li>
+          <li class="sub-menu">香蕉</li>
+          <li class="sub-menu">苹果</li>
+        </ul>
+      </li>
+      <li class="main-menu">
+        <label for="ck4">
+            <span>水果</span>    
+        </label>
+        <input id="ck4" class="ck" type="checkbox" checked>
+        <ul class="sub-menu-container">
+          <li class="sub-menu">橘子</li>
+          <li class="sub-menu">香蕉</li>
+          <li class="sub-menu">苹果</li>
+        </ul>
+      </li>
+    </ul>
+    <h3>第三步优化</h3>
+    <p>将label设置成和一级菜单同样大小，隐藏checkbox，添加动画</p>
+    <ul class="menu">
+      <li class="main-menu">
+        <label for="ck5" class="menu-label">
+            <span>水果</span>    
+        </label>
+        <input id="ck5" class="ck-finished" type="checkbox">
+        <ul class="sub-menu-container">
+          <li class="sub-menu-finished">橘子</li>
+          <li class="sub-menu-finished">香蕉</li>
+          <li class="sub-menu-finished">苹果</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
