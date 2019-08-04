@@ -1,0 +1,35 @@
+.con {
+  display: inline-block;
+  margin: 50px 80px;
+  border: 1px solid #f5222d;
+  border-radius: 5px;
+}
+
+.css-tips {
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+[data-title] {
+  position: relative;
+  overflow: visible;
+}
+
+.css-tips[data-title]:before,
+.css-tips[data-title]:after {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 100%;
+  transform: translate(-50%, -20%);
+  opacity: 0;
+  transition: .15s .15s;
+  color: #373c42;
+  visibility: hidden;
+}
+
+.css-tips[data-title]:before {
+  content: attr(data-title)
+}
+

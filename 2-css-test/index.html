@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="con">
+      <!-- 
+        上 右 下 左
+        data-title-dir="up"
+        data-title-dir="right"
+        data-title-dir="bottom"
+        data-title-dir="left" 
+      -->
+    <span class="css-tips" data-title="删除删除删除" data-title-dir="up">提示上</span>
+  </div>
+
+  <br>
+
+  <div class="con">
+    <!-- 
+      多行提示 
+      data-title-muti 
+    -->
+    <span class="css-tips" data-title="删除删除删除删除删除删除删除删除删除" data-title-dir="right" data-title-muti>多行提示</span>
+  </div>
+
+  <br>
+
+  <div class="con">
+    <!-- 
+      添加类型可以区分类型
+      data-title-type="success" 
+    -->
+    <span class="css-tips" data-title="删除删除删除删除" data-title-type="success">温馨提示</span>
+  </div>
+
+  <!-- <a href="javascript:" class="icon-delete css-tips" data-title="删除" role="button">del</a> -->
+</body>
+</html>

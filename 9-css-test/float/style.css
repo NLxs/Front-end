@@ -1,0 +1,47 @@
+.page-list {
+  padding: 0;
+  list-style: none;
+}
+
+.page-title {
+  overflow: hidden;
+  height: 40px;
+  line-height: 40px;
+}
+
+.page-txt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  color: #a2a5ac;
+  text-align: left;
+}
+
+.page-label {
+  float: right;
+}
+
+.page-sign {
+  font-size: 14px;
+  padding: 2px 3px;
+  margin-left: 3px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.page-sign[type="type"] {
+  color: #aeafaf;
+}
+
+.page-sign[type="type"] {
+  color: #ee4e54;
+}
+
+.page-sign[type="number"] {
+  color: #669ef7;
+}
+
+.page-list[reserve] .page-txt {
+  direction: rtl;
+}

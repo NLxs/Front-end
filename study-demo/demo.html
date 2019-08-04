@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <title></title>
+    <style>
+        body {
+            margin: 0
+        }
+        html {
+            font-size: 16px;
+        }
+        @media screen and (min-width: 375px) {
+            html {
+                /* iPhone6的375px尺寸作为16px基准，414px正好18px大小, 600 20px */
+                font-size: calc(100% + 2 * (100vw - 375px) / 39);
+                font-size: calc(16px + 2 * (100vw - 375px) / 39);
+            }
+        }
+        @media screen and (min-width: 414px) {
+            html {
+                /* 414px-1000px每100像素宽字体增加1px(18px-22px) */
+                font-size: calc(112.5% + 4 * (100vw - 414px) / 586);
+                font-size: calc(18px + 4 * (100vw - 414px) / 586);
+            }
+        }
+        body {
+            font-family: sans-serif;
+            line-height: 1.5;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-text-size-adjust: none;
+            -webkit-touch-callout: none
+        }
+        img {
+            display: inline-block;
+        }
+        .content {
+            padding: 0 .5rem;
+        }
+        .message {
+            padding: .75rem 0;
+            display: flex;
+        }
+        .avatar {
+            width: 3rem;
+        }
+        .avatar img {
+            width: 100%;
+            border-radius: 50%;
+        }
+        .info {
+            font-size: .875rem;
+            padding: 0 .8rem;
+            max-width: calc(100% - 6rem);
+            box-sizing: border-box;
+        }
+        .head {
+            color: #909bab;
+            font-size: .875rem;
+            line-height: 1;
+        }
+        .head span {
+            display: inline-block;
+        }
+        .head .time {
+            margin: 0 .5rem;
+        }
+        .text {
+            padding: .5rem 1rem;
+            margin-top: .5rem;
+            border-radius: .5rem;
+            position: relative;
+            text-align: justify;
+            word-break: break-all;
+            background: #f2f5f9;
+        }
+        .message .text::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 1.2rem;
+            height: 1rem;
+            left: -1.2rem;
+            border-radius: 0 50%;
+            box-shadow: 0.5rem 0 0 0 #f2f5f9;
+        }
+        .message[data-self] {
+            flex-direction: row-reverse;
+        }
+        .message[data-self] .head {
+            direction: rtl;
+        }
+        .message[data-self] .text {
+            color: #fff;
+            background: #00afff;
+        }
+        .message[data-self] .text::before {
+            left: inherit;
+            right: -1.2rem;
+            border-radius: 50% 0;
+            box-shadow: -0.5rem 0 0 0 #00afff;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="message">
+        <div class="avatar"><img src="https://tva4.sinaimg.cn/crop.0.0.750.750.180/75f2b996jw8f6zkdm7qp7j20ku0kudgr.jpg"
+                                 alt="pic"/></div>
+        <div class="info">
+            <div class="head"><span class="user">提案笙</span><span class="time">9月30日21:47</span></div>
+            <div class="text">什么秘密，我觉得你现在跟我说什么都没有意义。</div>
+        </div>
+    </div>
+    <div class="message">
+        <div class="avatar"><img
+                src="https://tvax4.sinaimg.cn/crop.0.0.512.512.180/6cd7bd09ly8fsnom1e5wtj20e80e8gm7.jpg" alt="pic"/>
+        </div>
+        <div class="info">
+            <div class="head"><span class="user">淮南王铃</span><span class="time">10月8日10:30</span></div>
+            <div class="text">@蝴蝶蓝 优秀</div>
+        </div>
+    </div>
+    <div class="message">
+        <div class="avatar"><img
+                src="https://tvax3.sinaimg.cn/crop.135.0.810.810.180/006LO43wly8frjay2sypvj30u00mita5.jpg" alt="pic"/>
+        </div>
+        <div class="info">
+            <div class="head"><span class="user">蝴蝶蓝</span><span class="time">昨天22:13</span></div>
+            <div class="text">值得一听~~</div>
+        </div>
+    </div>
+    <div class="message" data-self>
+        <div class="avatar"><img src="https://tva1.sinaimg.cn/crop.0.0.750.750.180/006bQeGsjw8f1tgl7z9ncj30ku0kuq44.jpg"
+                                 alt="pic"></div>
+        <div class="info">
+            <div class="head"><span class="user">Y优秀X</span><span class="time">刚刚</span></div>
+            <div class="text">围观戏精现场围观戏精现场围观戏精现场围观戏精现场围观戏精现场围观戏精现场围观戏精现场围观戏精现场</div>
+        </div>
+    </div>
+</div>
+<!--<script>-->
+<!--  document.documentElement.addEventListener('touchstart', function (event) {-->
+<!--    if (event.touches.length > 1) {-->
+<!--      event.preventDefault();-->
+<!--    }-->
+<!--  }, false);-->
+
+<!--  var lastTouchEnd = 0;-->
+<!--  document.documentElement.addEventListener('touchend', function (event) {-->
+<!--    var now = Date.now();-->
+<!--    if (now - lastTouchEnd <= 300) {-->
+<!--      event.preventDefault();-->
+<!--    }-->
+<!--    lastTouchEnd = now;-->
+<!--  }, false);-->
+<!--  document.addEventListener('gesturestart', function (event) {-->
+<!--    event.preventDefault();-->
+<!--  });-->
+<!--</script>-->
+</body>
+</html>

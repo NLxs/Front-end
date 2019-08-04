@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>下拉菜单</title>
+</head>
+<body>
+  <nav class="flyout-nav">
+    <ul>
+      <!-- 菜单一开始 -->
+      <li>
+        <a href="#"><span class="label">File</span></a>
+        <ul>
+          <li>
+            <a href="#">
+              <span class="label">New Tab</span>
+              <span class="shortcut">⌘T</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="label">New Window</span>
+              <span class="shortcut">⌘N</span>
+            </a>
+          </li>
+          <!--分隔线-->
+          <li class="separator"></li>
+          <li class="has-children">
+            <a href="#">
+              <span class="label">Share</span>
+            </a>
+            <ul>
+              <li>
+                <a href="#">
+                  <span class="label">✉️ Email</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="label">📒 Notes</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <!-- 菜单一结束 -->
+
+      <!-- 菜单二开始 -->
+      <li>
+        <a href="#">
+          <span class="label">View</span>
+        </a>
+        <ul>
+          <li>
+            <a href="#">
+              <input type="checkbox" id="alwaysShowBookmarksBar" checked="true" />
+              <label class="label" for="alwaysShowBookmarksBar">Always Show Bookmarks Bar</label>
+              <span class="shortcut">⇧⌘B</span>
+            </a>
+          </li>
+          <li class="separator"></li>
+          <li>
+            <a href="#">
+              <input type="checkbox" id="alwaysShowToolbar" />
+              <label class="label" for="alwaysShowToolbar">Always Show Toolbar in Fullscreen</label>
+              <span class="shortcut">⇧⌘F</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <!-- 菜单二结束 -->
+
+      <!-- 菜单三开始 -->
+      <li>
+        <a href="#">
+          <span class="label">History</span>
+        </a>
+        <ul>
+          <li>
+            <a href="#">
+              <span class="label">Back</span>
+              <span class="shortcut">⌘[</span>
+            </a>
+          </li>
+          <li class="separator"></li>
+          <li class="disabled">
+            <a href="#">
+              <span class="label">Forward</span>
+              <span class="shortcut">⌘]</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</body>
+</html>

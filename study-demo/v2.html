@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            font: menu;
+        }
+        .box {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0,0,0,.5);
+            text-align: center;
+            white-space: nowrap;
+            color: #fff;
+            font-size:0;
+            z-index: 99;
+        }
+        .after{
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        .dialog {
+            display: inline-block;
+            vertical-align: middle;
+            text-align: left;
+            font-size: 14px;
+            white-space: normal;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="dialog">
+        <div style="width: 200px;height: 200px;background: #fff; color: #000">qwe</div>
+    </div>
+    <div class="after" style="color:aqua; background: antiquewhite">123123</div>
+</div>
+</body>
+</html>
