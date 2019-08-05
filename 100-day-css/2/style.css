@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 14px;
+}
+
+.background {
+  position: relative;
+  background: linear-gradient(to bottom, #3FAF82 0%, #267555 100%);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+  width: 400px;
+  height: 400px;
+}
+
+.icon {
+  position: relative;
+  height: 60px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.line {
+  position: absolute;
+  background-color: white;
+  height: 8px;
+  width: 80px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+  transform-origin: center;
+}
+
+.one {
+  top: 0;
+  animation: firstLineShow .5s ease-in-out;
+}
+
+@keyframes firstLineShow {
+  0% {
+    top: 22px;
+    transform: rotate(45deg);
+  }
+
+  50% {
+    top: 22px;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+}
+
+.two {
+  top: 22px;
+  animation: secondLineReverse .5s ease-in-out;
+}
+
+@keyframes secondLineReverse {
+
+  0%,
+  50% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.three {
+  top: 44px;
+  animation: thirdLineShow .5s ease-in-out;
+}
+
+@keyframes thirdLineShow {
+  0% {
+    top: 22px;
+    transform: rotate(135deg);
+  }
+
+  50% {
+    top: 22px;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    top: 44px;
+    transform: rotate(0deg);
+  }
+}
+
+.active .one {
+  top: 22px;
+  transform: rotate(45deg);
+  animation: firstLineAnimation .5s ease-in-out;
+}
+
+@keyframes firstLineAnimation {
+  0% {
+    top: 0;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    top: 22px;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    top: 22px;
+    transform: rotate(45deg);
+  }
+}
+
+.active .two {
+  transform: scale(0);
+  animation: secondLineAnimation .5s ease-in-out;
+}
+
+@keyframes secondLineAnimation {
+  0% {
+    transform: scale(1);
+  }
+
+  50%,
+  100% {
+    transform: scale(0);
+  }
+}
+
+.active .three {
+  top: 22px;
+  transform: rotate(135deg);
+  animation: thirdLineHide .5s ease-in-out;
+}
+
+@keyframes thirdLineHide {
+  0% {
+    top: 44px;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    top: 22px;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    top: 22px;
+    transform: rotate(135deg);
+  }
+}
+
+.disableAnimation {
+  animation: none;
+}
