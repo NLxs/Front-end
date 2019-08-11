@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>js-2-day</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        font-size: 0;
+      }
+      .container:before {
+        content: "\3000";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+      }
+      .clock {
+        position: relative;
+        display: inline-block;
+        width: 120px;
+        height: 120px;
+        padding: 10px;
+        border: 10px solid lightblue;
+        border-radius: 50%;
+      }
+      .clock-face {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .hand {
+        width: 50%;
+        height: 6px;
+        background-color: black;
+        position: absolute;
+        top: 50%;
+        transition: all 0.05s;
+        transform: rotate(90deg);
+        transform-origin: 100%;
+        transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+      }
+      .no-transition {
+        transition: all 0s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="clock">
+        <div class="clock-face">
+          <div class="hand hand-second"></div>
+          <div class="hand hand-min"></div>
+          <div class="hand hand-hour"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const handSecond = document.querySelector(".hand-second");
+      const handMin = document.querySelector(".hand-min");
+      const handHour = document.querySelector(".hand-hour");
+      function setDate() {
+        const time = new Date();
+        const second = time.getSeconds();
+        const secondDegrees = (second / 60) * 360 + 90;
+        if (second === 0) {
+          handSecond.style.transition = "all 0s";
+        } else {
+          handSecond.style.transition = "";
+        }
+        handSecond.style.transform = `rotate(${secondDegrees}deg)`;
+        const min = time.getMinutes();
+        const minDegrees = (min / 60) * 360 + 90;
+        if (min === 0) {
+          handMin.style.transition = "all 0s";
+        } else {
+          handMin.style.transition = "";
+        }
+        handMin.style.transform = `rotate(${minDegrees}deg)`;
+        const hour = time.getHours();
+        const hourDegrees = (hour / 12) * 360 + 90;
+        if (hour === 0) {
+          handHour.style.transition = "all 0s";
+        } else {
+          handHour.style.transition = "";
+        }
+        handHour.style.transform = `rotate(${hourDegrees}deg)`;
+      }
+      setInterval(setDate, 1000);
+    </script>
+  </body>
+</html>
