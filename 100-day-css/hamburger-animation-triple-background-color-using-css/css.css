@@ -1,0 +1,17 @@
+.d1 {
+  width: 10px;
+  height: 10px;
+  border: 1px solid red;
+}
+
+.d2 {
+  width: 10px;
+  height: 10px;
+  border: 1px solid pink;
+}
+
+.d3 {
+  width: 10px;
+  height: 10px;
+  border: 1px solid blue;
+}

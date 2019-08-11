@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 14px;
+}
+
+.background {
+  position: relative;
+  background: linear-gradient(to bottom, #49627b 0%, #253340 100%);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
+  width: 400px;
+  height: 400px;
+}
+
+.icon {
+  position: absolute;
+  height: 20px;
+  width: 50px;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+  border-top: 4px solid white;
+  border-bottom: 4px solid white;
+  pointer-events: auto;
+  animation: none;
+  z-index: 3;
+}
+
+/* Visible 可见 */
+.iconVisible {
+  animation: open 1s ease both;
+}
+
+.iconInvisible {
+  height: 57px;
+  width: 280px;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  pointer-events: none;
+  animation: close 1s ease both;
+}
+
+@keyframes close {
+  0% {
+    height: 20px;
+    width: 50px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+
+  50% {
+    height: 57px;
+    width: 50px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+
+  100% {
+    height: 57px;
+    width: 280px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+}
+
+@keyframes open {
+  0% {
+    height: 57px;
+    width: 280px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+
+  50% {
+    height: 57px;
+    width: 50px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+
+  100% {
+    height: 20px;
+    width: 50px;
+  }
+}
+
+.panel {
+  padding: 20px 15px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.panelInvisible {
+  pointer-events: auto;
+  animation: displayPanel 1s ease both;
+}
+
+.panelVisible {
+  pointer-events: none;
+  animation: hidePanel 1s ease both;
+}
+
+.elements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+  color: white;
+  text-transform: uppercase;
+}
+
+@keyframes displayPanel {
+
+  0%,
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hidePanel {
+  0% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
