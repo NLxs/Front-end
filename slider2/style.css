@@ -1,0 +1,71 @@
+html, body {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ccc;
+}
+
+.slider-wrapper {
+  max-width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  left: 0;
+  transition: all 0.5s ease;
+}
+
+.slider-item {
+  flex: 0 0 100%;
+}
+
+.slider-content {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.slider-content h1 {
+  text-align: right;
+  font-family: "Brush Script MT", cursive;
+  font-size: 96px;
+  margin: 0 0 -1.5rem;
+  color: #888;
+}
+
+.slider-content p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  margin: 0;
+}
+
+.controls {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+}
+
+.controls button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background: #444;
+  border: none;
+  color: #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.controls button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
