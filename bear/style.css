@@ -1,0 +1,132 @@
+html, body {
+  /* background: #f2dab1; */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+	flex-direction: column;
+}
+
+.ears {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: 70px;
+} 
+
+.ear {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #945a43;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #71422a;
+}
+
+.face {
+  z-index: 1;
+  width: 430px;
+  height: 380px;
+  background: #945a43;
+  border-radius: 50%;
+  display: grid;
+  grid-template-columns: 1fr repeat(4, 25px) 1fr;
+  grid-template-rows: repeat(3, 1fr) 50px;
+	align-items: center;
+}
+
+.eye {
+	width: 30px;
+	height: 30px;
+	background: #090b0e;
+	border-radius: 50%;
+	justify-self: center;
+}
+
+.eye.left {
+	grid-area: 2/2/3/3;
+}
+
+.eye.right {
+	grid-area: 2/5/3/6;
+}
+
+.snout {
+	background: #fbdbbf;
+	border-radius: 50%;
+	height: 100%;
+	grid-area: 3/2/4/6;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.nose {
+	background: #090b0e;
+	width:40px;
+	height:25px;
+	border-radius:50%;
+}
+
+.bridge {
+	background: #090b0e;
+	width: 12px;
+	height: 22px;
+	margin-top: -2px;
+}
+
+.mouth-wrapper {
+	display: flex;
+}
+
+.mouth {
+	width: 8px;
+	height: 35px;
+	background: #090b0e;
+	border-radius: 5px;
+	margin-top: -2px;
+}
+
+.mouth.left {
+	transform-origin: top right;
+	transform: rotate(35deg);
+	margin-right: -2px;
+}
+
+.mouth.right {
+	margin-left: -2px;
+	transform-origin: top left;
+	transform: rotate(-35deg);
+}
+
+.blush {
+	width: 40px;
+	height: 30px;
+	background: #f5a2be;
+	border-radius: 50%;
+}
+
+.blush.left {
+	grid-area: 2/1/3/2;
+	align-self: end;
+	justify-self: end;
+}
+
+.blush.right {
+	align-self: end;
+	grid-area: 2/6/3/7;
+}
