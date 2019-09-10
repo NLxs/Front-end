@@ -1,0 +1,122 @@
+body {
+  width: 700px;
+  margin: 100px auto;
+  background: #000;
+}
+
+.symbol-outer {
+  position: relative;
+  width: 700px;
+  height: 400px;
+  background: yellow;
+  border: 10px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 10px 2px yellow;
+}
+
+.symbol-inner {
+  position: absolute;
+  width: 600px;
+  height: 300px;
+  background: #000;
+  border-radius: 50%;
+  top: 10%;
+  left: 6%;
+}
+
+.upper-left {
+  width: 125px;
+  height: 125px;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  left: 25%;
+  top:-15px;
+}
+
+.upper-left::before {
+  content: "";
+  width: 175px;
+  height: 100px;
+  background: yellow;
+  position: absolute;
+  left: 50%;
+  bottom: 30px
+}
+
+.upper-right {
+  width: 120px;
+  height: 125px;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  right: 25%;
+   top:-15px;
+}
+
+.head {
+  width: 100px;
+  height: 125px;
+  background: black;
+  position: absolute;
+  left: 42%;
+  top: 30px;
+  transform: perspective(200px)rotatex(30deg);
+}
+
+.head::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 180px;
+  background: yellow;
+  position: absolute;
+  top: -1px;
+  transform-origin: top;
+  transform: perspective(100px)rotatex(-45deg);
+}
+
+.bottom-left-1 {
+  position: absolute;
+  width: 80px;
+  height: 200px;
+  background: yellow;
+  border-radius: 50%;
+  transform: rotatez(-25deg);
+  top: 215px;
+  left: 225px;
+}
+
+.bottom-left-2 {
+  position: absolute;
+  width: 80px;
+  height: 200px;
+  background: yellow;
+  border-radius: 50%;
+  transform: rotatez(-40deg);
+  top: 200px;
+  left: 160px;
+}
+
+.bottom-right-1 {
+  position: absolute;
+  width: 80px;
+  height: 200px;
+  background: yellow;
+  border-radius: 50%;
+  transform: rotatez(25deg);
+  top: 215px;
+  right: 225px;
+}
+
+.bottom-right-2 {
+  position: absolute;
+  width: 80px;
+  height: 200px;
+  background: yellow;
+  border-radius: 50%;
+  transform: rotatez(40deg);
+  top: 200px;
+  right: 160px;
+}
