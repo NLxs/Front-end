@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <script src="main.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <!--HTML如下-->
+  <form id="loginForm" action="/account/login" method="post">
+    <p>
+      账号
+      <input name="username" required>
+    </p>
+    <p>
+      密码
+      <input name="password" type="password" required>
+    </p>
+    <p>
+      <input type="submit" value="登录">
+    </p>
+    <!-- 问题五HTML代码 -->
+    <input name="from" type="hidden">
+  </form>
+
+
+  <script>
+    // 1 获取<form> 元素
+      var form = document.getElementById("loginForm");
+
+    // 2 <form>表单提交时阻止默认提交行为
+      form.addEventListener('submit', function(ev) {
+        ev.preventDefault();
+      });
+
+    // 3 <form>表单提交改为ajax提交, 不需要写ajax请求代码, 写下如何获取<form>需要提交的数据
+      var formdata = new FormData(form);
+
+    // 4 ajax提交的时候要阻止二次点击提交, 通过改变某个元素的某个属性实现
+
+      // 方法一
+      form[submit].addEventListener('click',function(){
+        this.disabled = true;
+        var request = new XMLHttpRequest();
+        // 下面的目前没看懂
+        request.open("POST", "XXX");
+        request.send(formdata);
+        request.onload = function(oEvent) {
+            //其他业务逻辑
+           form[submit].disabled = false;
+        };
+      })
+
+      // 方法二
+      loginGorm.querySelection('[type=[submit]').disabled = true;
+
+    // 5 将隐藏的input框的数据和form表单的数据一起提交
+    
+      // 在隐藏的input加上form是属性即可
+      // <input name="from" type="hidden" form="loginForm">
+  </script>
+</body>
+</html>
