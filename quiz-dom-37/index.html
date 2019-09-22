@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="box">
+    <button onclick="dialog1.showTop()">open dialog1</button>
+    <button onclick="dialog2.showTop()">open dialog2</button>
+    <button onclick="dialog3.showTop()">open dialog3</button>
+    <dialog id="dialog1">
+      <h3>dialog1</h3>
+      <button class="open" onclick="dialog2.showTop()">open dialog2</button>
+      <button class="open" onclick="dialog3.showTop()">open dialog3</button>
+      <button class="close" onclick="this.parentNode.close()">close</button>
+    </dialog>
+    <dialog id="dialog2">
+      <h3>dialog2</h3>
+      <button class="open" onclick="dialog1.showTop()">open dialog1</button>
+      <button class="open" onclick="dialog3.showTop()">open dialog3</button>
+      <button class="close" onclick="this.parentNode.close()">close</button>
+    </dialog>
+    <dialog id="dialog3">
+      <h3>dialog3</h3>
+      <p>some text some text some text</p>
+      <button class="open" onclick="dialog1.showTop()">open dialog1</button>
+      <button class="open" onclick="dialog3.showTop()">open dialog2</button>
+      <button class="close" onclick="this.parentNode.close()">close</button>
+    </dialog>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>

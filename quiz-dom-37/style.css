@@ -1,0 +1,27 @@
+.box {
+  text-align: center;
+}
+
+dialog:not([open]) {
+  display: block;
+  /* 元素隐藏 */
+  visibility: hidden;
+  /* 
+  透明度 opacity
+  完全不透明 1
+  半透明 0.6
+  完全透明 0
+  */
+  opacity: 0;
+  /* 旋转, 缩放, 倾斜或平移给定元素 */
+  transform: scale(.5);
+  transition: .1s;
+}
+
+dialog[open] {
+  /* 元素正常显示 */
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  transition: .3s;
+}
