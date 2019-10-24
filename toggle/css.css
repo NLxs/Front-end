@@ -1,0 +1,49 @@
+.content {
+  width: 1050px;
+  margin: 100px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.content ul li {
+  float: left;
+  list-style: none;
+  width: 200px;
+  height: 284px;
+  transition: all 2s;
+  position: relative;
+  overflow: hidden;
+  border-left: 2px solid #cccccc;
+  box-shadow: 0px 0px 20px #0f0f0f;
+}
+
+/* 注意：以下两个hover  不可以换位置 */
+.content ul:hover li {
+  width: 80px;/*当鼠标移入到其中一个 li的时候 其他li宽度缩小*/
+}
+.content ul li:hover {
+  width: 500px;
+}
+
+/*如果图片定义 高百分百，无法实现手风琴效果*/
+.content ul li a img{
+  /*宽度可以根据父元素宽度定义, 可以不定义*/
+  /* 如果三张图片的宽度不一样会有空白部分 */
+  width: 500px;
+  height:100%;
+}
+.content li .title {
+  position: absolute;/*文字 title 定位*/
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color:#0f0f0f;/* title 文字背景 */
+  text-indent: 2em;/*首行缩进两个字符*/
+  line-height: 50px;
+}
+
+.content a {
+  color: #fff;
+  text-decoration: none;
+}
