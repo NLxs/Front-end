@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./style.css">
+  <title>Vue.js TodoList</title>
+</head>
+<body>
+
+  <div class="container" id="todo">
+    <section class="panel">	
+      <input type="checkbox" id="mark-all" @click="selectAll" :checked="areAllSelected">
+      <input v-model="newTask" @keyup.enter="addTask" placeholder="今天要做什么?" autofocus class="text-input">
+      <button @click="clearList">Clear List</button>
+    </section>
+    <section class="list">
+      <ul class="list-item">
+        <li v-for="task in tasks" :class="{done: isChecked(task)}">
+          <input type="checkbox" class="checkbox" @click="check" v-model="task.checked">
+          <input type="text" v-if="task === editingTask" v-auto-focus class="text-input" @keyup.enter="endEditing(task)" @blur="endEditing(task)" v-model="task.text">
+          <label for="checkbox" v-if="task !== editingTask" @dblclick="editTask(task)">{{ task.text }}</label>
+          <button class="delete" @click="removeTask(task)">X</button>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="credit">
+    <p>在input增加内容使用enter添加</p>
+    <p>点击checkbox标记为完成</p>
+    <p>悬浮在list上点击X删除</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
