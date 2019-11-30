@@ -2,64 +2,37 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>Vue Filters</title>
+  <title>Vue.js Table w/ Filter</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div id="app">
-    <div class="box content">
-      <h1>过滤器</h1>
-      <p>
-        字符样式类型转换使用v-model数据双向绑定
-        (<code v-text="'{{ input | filter }}'"></code>) 
-        and 
-        <code>v-bind</code> 
-        (<code v-text="'{{ input | filter | anotherFilter }}'"></code>).
-      </p>
-      
-      <label class="input-box">
-        <div>输入字符:</div>
-        <input type="text" v-model="textInput" />
-      </label>
-
-      <div class="examples">
-
-        <div class="example">
-          大写:
-          <pre> {{ textInput | uppercase }} </pre>
-        </div>
-
-        <div class="example">
-          小写:
-          <pre> {{ textInput | lowercase }} </pre>
-        </div>
-
-        <div class="example">
-          标题类型大写:
-          <pre> {{ textInput | titlecase }} </pre>
-        </div>
-
-        <div class="example">
-          反转:
-          <pre> {{ textInput | reverse }} </pre>
-        </div>
-
-        <div class="example">
-          字符后面加ay:
-          <pre> {{ textInput | piglatin }} </pre>
-        </div>
-
-        <div class="example">
-          ya加上输入的字符:
-          <pre> {{ textInput | piglatin | reverse }} </pre>
-        </div>
-      </div>
-    </div>
+<div class="container">
+  <div id="vue-table">
+    <input type="text" v-model="search" class="form-control" />
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th v-repeat="column: columns">
+            <a href="#" v-on="click: sortBy(column)" v-class="active: sortKey == column">
+              {{ column | capitalize }}
+            </a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-repeat="people | filterBy search | orderBy sortKey reverse">
+          <td>{{ name }}</td>
+          <td>{{ age }}</td>
+        </tr>
+      </tbody>
+    </table>  
   </div>
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.9/vue.min.js'></script>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/0.11.10/vue.min.js'></script>
   <script  src="./main.js"></script>
+
 </body>
 </html>

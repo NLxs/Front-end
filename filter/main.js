@@ -1,38 +1,24 @@
-console.clear();
-
 new Vue({
-  el: '#app',
+  el: "#vue-table",
   data() {
     return {
-      textInput: "hello world"
+      sortKey: '',
+      search: '',
+      reverse: false,
+      columns: ['姓名', '年龄'],
+      people: [
+        { name: 'user1', age: 18 },
+        { name: 'nuolu', age: 23 },
+        { name: 'fwh', age: 20 },
+        { name: 'liziran', age: 35 },
+        { name: 'yueying', age: 37 }
+      ]
     }
   },
-
-  filters: {
-    uppercase: function (value) {
-      return value.toUpperCase();
-    },
-    
-    lowercase: function (value) {
-      return value.toLowerCase();
-    },
-    
-    reverse: function (value) {
-      return value.split('').reverse().join('');
-    },
-
-    titlecase: function (value) {
-      value = value.toLowerCase().split(' ');
-      return value.map( word => {
-        return word.charAt(0).toUpperCase() + word.slice(1);
-      }).join(' ');
-    },
-    
-    piglatin: function (value) {
-      value = value.toLowerCase().split(' ');
-      return value.map( word => {
-        return word.slice(1) + word.charAt(0) + 'ay';
-      }).join(' ');
+  methods: {
+    sortBy: function(sortKey) {
+      this.reverse = (this.sortKey == sortKey) ? ! this.reverse : false;
+      this.sortKey = sortKey;
     }
   }
-});
+})

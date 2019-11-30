@@ -1,0 +1,14 @@
+#vue-table {
+  margin: 2em 0;
+
+  a {
+    font-weight: bold;
+    text-decoration: none;
+
+    &.active {
+      font-weight: bold;
+      color: aquamarine;
+      text-decoration: underline;
+    }
+  }
+}
