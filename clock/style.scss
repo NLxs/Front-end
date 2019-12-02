@@ -1,0 +1,39 @@
+$top-color: LightSteelBlue;
+$bottom-color: LightSalmon;
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: -webkit-linear-gradient($top-color, $bottom-color);
+  background: -o-linear-gradient($top-color, $bottom-color);
+  background: -moz-linear-gradient($top-color, $bottom-color);
+  background: linear-gradient($top-color, $bottom-color);
+}
+
+section.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 140px;
+  background: transparent;
+}
+
+h3.is-3, p.time {
+  color: white;
+}
+
+h3.is-3:not(:last-child) {
+  margin: 0;
+  padding: 0;
+}
+
+.time {
+  font-size: 7em;
+}
+
+.shadow {
+  text-shadow: 0 0 15px rgba(100, 100, 100, .35);
+}
