@@ -1,0 +1,45 @@
+.accordion {
+  margin: 50px;
+}
+
+.accordion .item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 3px 0;
+}
+
+.accordion h2 {
+  margin: 0;
+  background: #ddd;
+  padding: 5px 10px;
+  font-size: 18px;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.accordion h2:after {
+  content: '';
+  widows: 10px;
+  height: 10px;
+  background: url(https://image.flaticon.com/icons/svg/25/25649.svg) no-repeat;
+  background-size:cover;
+  display:block;
+}
+
+.open h2:after {
+  transform: rotate(180deg);
+}
+
+.open h2 {
+  background: #aebde4;
+}
+
+.accordion article {
+  padding: 10px;
+  font-size: 12px;
+  display: none;
+}
