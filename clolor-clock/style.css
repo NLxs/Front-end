@@ -1,0 +1,16 @@
+div {
+  display: flex;
+  justify-content: center;
+}
+
+.hour {
+  color: red;
+}
+
+.min {
+  color: aqua;
+}
+
+.sec {
+  color: yellow;
+}
