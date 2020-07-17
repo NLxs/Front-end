@@ -1,0 +1,45 @@
+<!--
+  需要解决的问题
+  a标签 title用法 各种伪类
+  text-decoration:none 文本修饰: none/其他用法
+  css选择器
+-->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="./pic/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./style.css">
+  <title>百度一下, 你就知道</title>
+</head>
+<body>
+  <div id="top">
+    <div id="header-left">
+      <a href="#">新闻</a>
+      <a href="#">hao123</a>
+      <a href="#">地图</a>
+      <a href="#">视频</a>
+      <a href="#">贴吧</a>
+      <a href="#">学术</a>
+      <a href="#">更多</a>
+    </div>
+    <div id="header-right">
+      <a href="#">高考加油</a>
+      <a href="#" title="换肤">换肤</a>
+      <a href="#" title="设置">设置</a>
+      <a href="#" title="登录" class="toLogin">登录</a>
+    </div>
+  </div>
+  <div id="container">
+    <a href="https://baidu.com/" target="_blank">
+      <img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="百度logo" width="270px" height="129px">
+    </a>
+    <div id="container-search">
+      <input type="text" class="text" maxlength="255" autocomplete="off" placeholder="百度一下, 你就知道"> />
+      <input type="submit" class="search" value="百度一下">
+    </div>
+  </div>
+</body>
+</html>
